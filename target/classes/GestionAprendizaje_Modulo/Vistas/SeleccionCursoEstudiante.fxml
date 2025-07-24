@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="GestionAprendizaje_Modulo.Controladores.SeleccionCursoEstudianteController"
+            prefWidth="360.0" prefHeight="640.0">
+
+  <!-- Título -->
+  <top>
+    <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
+      <Label text="Elige tu Curso"
+             style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </VBox>
+  </top>
+
+  <!-- Contenido central -->
+  <center>
+    <VBox alignment="TOP_CENTER" spacing="15" BorderPane.alignment="CENTER">
+      <!-- Aquí va el padding correctamente -->
+      <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+      </padding>
+
+      <!-- ComboBox con los cursos que creó el admin -->
+      <ComboBox fx:id="comboCursos"
+                promptText="Selecciona un curso..."
+                prefWidth="300"
+                onAction="#onCursoSeleccionado"/>
+
+      <!-- Área de descripción no editable -->
+      <TextArea fx:id="txtDescripcion"
+                editable="false"
+                wrapText="true"
+                prefWidth="300"
+                prefHeight="200"/>
+    </VBox>
+  </center>
+
+  <!-- Pie con botón Atrás -->
+  <bottom>
+    <HBox alignment="CENTER_RIGHT" spacing="10" BorderPane.alignment="CENTER">
+      <!-- Padding en HBox -->
+      <padding>
+        <Insets top="10" right="20" bottom="20" left="0"/>
+      </padding>
+
+      <Button text="Atrás"
+              onAction="#handleAtras"/>
+    </HBox>
+  </bottom>
+</BorderPane>
