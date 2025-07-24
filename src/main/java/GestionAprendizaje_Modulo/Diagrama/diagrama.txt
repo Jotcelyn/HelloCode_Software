@@ -1,0 +1,318 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class AdminRutaVisualController {
+  - pathContainer: VBox
+  - buttonAtras: Button
+  - buttonAgregar: Button
+  - labelNameRuta: Text
+  - rutaActual: Ruta
+  - repositorio: RepositorioEnMemoria
+  - actualizarVista(): void
+  ~ añadirNodos(ActionEvent): void
+  - regresarPrincipal(): void
+  + initialize(): void
+  - crearComponenteVisualNodo(NodoRuta): HBox
+  - obtenerOcrearRutaDePruebaEnRepositorio(): Ruta
+}
+class Articulo {
+  - url: String
+  + obtenerDetalle(): String
+}
+class Curso {
+  - descripcion: String
+  - modulos: List<ModuloEducativo>
+  - id: String
+  - nombre: String
+  - rutas: List<Ruta>
+  + toString(): String
+  + getId(): String
+  + getDescripcion(): String
+  + getRutas(): List<Ruta>
+  + getModulos(): List<ModuloEducativo>
+  + getNombre(): String
+}
+class DialogoCrearNodoController {
+  - rutaActual: Ruta
+  - comboTipoRecurso: ComboBox<String>
+  - repoExterno: RepositorioExterno
+  - listRecursosAñadidos: ListView<RecursoAprendizaje>
+  - recursosTemporales: ObservableList<RecursoAprendizaje>
+  - comboLecciones: ComboBox<Leccion>
+  - txtUrlRecurso: TextField
+  - txtDatoExtraRecurso: TextField
+  - txtTituloRecurso: TextField
+  + initialize(): void
+  - limpiarCamposRecurso(): void
+  ~ handleGuardarNodo(ActionEvent): void
+  ~ handleCancelar(ActionEvent): void
+  + setRuta(Ruta): void
+  ~ handleAgregarRecurso(ActionEvent): void
+}
+class DocumentoPDF {
+  - urlDescarga: String
+  - numPaginas: int
+  + obtenerDetalle(): String
+}
+class GUI_Contenido {
+  + main(String[]): void
+  + start(Stage): void
+}
+class GestorDeModuloEducativo {
+  - repositorio: RepositorioModulosEducativos
+  - validador: ValidadorDeContenido
+  + publicarModuloEducativo(String): void
+  + editarModuloEducativo(String, Map<String, Object>): void
+  + crearModuloEducativo(Map<String, Object>): ModuloEducativo
+}
+class Leccion {
+  - titulo: String
+  - descripcion: String
+  - estado: String
+  - id: String
+  + setTitulo(String): void
+  + getId(): String
+  + getTitulo(): String
+  + actualizarContenido(String): void
+  + marcarComoCompletada(): void
+  + getEstado(): String
+  + setDescripcion(String): void
+  + getDescripcion(): String
+}
+class MainEnriquecedorDeContenido {
+  - scanner: Scanner
+  - repositorioCursos: Map<String, Curso>
+  - asociarEntidades(List<T>, List<T>, String): void
+  + main(String[]): void
+  - seleccionarNodo(Ruta): NodoRuta
+  - gestionarCurso(): void
+  - seleccionarCurso(): Curso?
+  - agregarMaterialANodo(NodoRuta): void
+  - crearCurso(): void
+  - seleccionarRuta(Curso): Ruta?
+}
+class MainRecursos {
+  - recursosCreados: List<RecursoAprendizaje>
+  - scanner: Scanner
+  + main(String[]): void
+  - mostrarRecursosCreados(): void
+  - crearArticulo(): void
+  - mostrarMenu(): void
+  - crearVideo(): void
+  - crearDocumentoPDF(): void
+}
+class ModuloEducativo {
+  - metadatosCurriculares: String
+  - id: String
+  - version: String
+  - titulo: String
+  - recursos: List<RecursoAprendizaje>
+  - estado: String
+  - lecciones: List<Leccion>
+  + setMetadatosCurriculares(String): void
+  + getEstado(): String
+  + getVersion(): String
+  + setTitulo(String): void
+  + getLecciones(): List<Leccion>
+  + getId(): String
+  + getMetadatosCurriculares(): String
+  + listarLecciones(): List<Leccion>
+  + getTitulo(): String
+  + listarRecursos(): List<RecursoAprendizaje>
+  + agregarLeccion(Leccion): void
+  + setEstado(String): void
+  + getRecursos(): List<RecursoAprendizaje>
+  + setVersion(String): void
+  + agregarRecurso(RecursoAprendizaje): void
+}
+class NodoDetalleController {
+  - textDescripcionLeccion: Text
+  - labelTituloLeccion: Label
+  - btnIrALeccion: Button
+  - vboxRecursos: VBox
+  - leccionActual: Leccion
+  ~ handleIrALeccion(ActionEvent): void
+  + setNodo(NodoRuta): void
+}
+class NodoRuta {
+  - leccion: Leccion
+  - materialDeApoyo: List<RecursoAprendizaje>
+  - orden: int
+  - completado: boolean
+  + getMaterialDeApoyo(): List<RecursoAprendizaje>
+  + marcarComoCompletado(): void
+  + getLeccion(): Leccion
+  + toString(): String
+  + agregarMaterialDeApoyo(RecursoAprendizaje): void
+  + estaCompletado(): boolean
+  + getOrden(): int
+}
+class RecursoAprendizaje {
+  - id: String
+  - titulo: String
+  + toString(): String
+  + getTitulo(): String
+  + obtenerDetalle(): String
+}
+class RepositorioEnMemoria {
+  - INSTANCIA: RepositorioEnMemoria
+  - cursos: Map<String, Curso>
+  - rutasIndependientes: List<Ruta>
+  - modulosIndependientes: List<ModuloEducativo>
+  + getCursos(): Map<String, Curso>
+  + getModulos(): List<ModuloEducativo>
+  + getInstancia(): RepositorioEnMemoria
+  + getRutas(): List<Ruta>
+  - precargarDatos(): void
+}
+class RepositorioExterno {
+  - leccionesDisponibles: List<Leccion>
+  - INSTANCIA: RepositorioExterno
+  - modulosDisponibles: List<ModuloEducativo>
+  - rutasDisponibles: List<Ruta>
+  - quemarLecciones(): void
+  + getInstancia(): RepositorioExterno
+  + getTodasLasRutas(): List<Ruta>
+  - quemarModulosYRutas(): void
+  + getTodasLasLecciones(): List<Leccion>
+  + getTodosLosModulos(): List<ModuloEducativo>
+}
+interface RepositorioModulosEducativos <<interface>> {
+  + actualizarModuloEducativo(ModuloEducativo): void
+  + guardarModuloEducativo(ModuloEducativo): void
+  + buscarPorId(String): ModuloEducativo
+  + buscarTodos(): List<ModuloEducativo>
+}
+class Ruta {
+  - id: String
+  - nombre: String
+  - descripcion: String
+  - nodos: List<NodoRuta>
+  + toString(): String
+  + getNombre(): String
+  + agregarNodo(NodoRuta): void
+  + obtenerProgreso(): double
+  + getNodos(): List<NodoRuta>
+}
+class RutaController {
+  - btnBack: Button
+  # clickBtnLvl1(): void
+  # clickBtnLvl4(): void
+  # clickBtnBack(ActionEvent): void
+  # clickBtnLvl2(): void
+  # clickBtnLvl3(): void
+  # clickBtnLesson(): void
+}
+class StudentDashboardController {
+  - buttonAtrasE: Button
+  - repositorio: RepositorioEnMemoria
+  - pathContainerEstudiante: VBox
+  - labelNombreRuta: Label
+  - comboCursos: ComboBox<Curso>
+  - comboRutas: ComboBox<Ruta>
+  - renderizarRutaEstudiante(Ruta): void
+  ~ onCursoSeleccionado(ActionEvent): void
+  ~ onRutaSeleccionada(ActionEvent): void
+  - regresarPrincipalE(): void
+  - configurarComboBoxes(): void
+  - cargarCursosIniciales(): void
+  - handleNodoClick(NodoRuta): void
+  + initialize(): void
+  - crearComponenteVisualNodo(NodoRuta): HBox
+}
+class ValidadorDeContenido {
+  + validarDatos(ModuloEducativo): boolean
+  + validarLecciones(List<Leccion>): boolean
+  + verificarFormato(ModuloEducativo): boolean
+  + validarLeccion(Leccion): boolean
+}
+class Video {
+  - duracionSegundos: int
+  - url: String
+  + obtenerDetalle(): String
+}
+class selectorRolController {
+  - buttonAdmin: Button
+  - buttonEstudiante: Button
+  - handleAdminButton(ActionEvent): void
+  ~ handleEstudianteButton(ActionEvent): void
+}
+
+'---------------------------
+' Relaciones
+
+' Curso tiene muchos módulos y muchas rutas
+Curso "1" *-- "*" ModuloEducativo : contiene >
+Curso "1" *-- "*" Ruta : contiene >
+
+' ModuloEducativo tiene muchos recursos y lecciones
+ModuloEducativo "1" *-- "*" RecursoAprendizaje : contiene >
+ModuloEducativo "1" *-- "*" Leccion : contiene >
+
+' NodoRuta tiene muchos recursos y una lección
+NodoRuta "1" *-- "*" RecursoAprendizaje : contiene >
+NodoRuta "1" *-- "1" Leccion : contiene >
+
+' Ruta tiene muchos nodos
+Ruta "1" *-- "*" NodoRuta : contiene >
+
+' Repositorios tienen agregaciones
+RepositorioEnMemoria "1" o-- "*" Curso : maneja >
+RepositorioEnMemoria "1" o-- "*" Ruta : maneja >
+RepositorioEnMemoria "1" o-- "*" ModuloEducativo : maneja >
+
+RepositorioExterno "1" o-- "*" Leccion : provee >
+RepositorioExterno "1" o-- "*" ModuloEducativo : provee >
+RepositorioExterno "1" o-- "*" Ruta : provee >
+
+' GestorDeModuloEducativo depende de repositorio e validador
+GestorDeModuloEducativo --> RepositorioModulosEducativos : usa >
+GestorDeModuloEducativo --> ValidadorDeContenido : usa >
+
+' RecursoAprendizaje es superclase abstracta
+Video --|> RecursoAprendizaje
+DocumentoPDF --|> RecursoAprendizaje
+Articulo --|> RecursoAprendizaje
+
+' Controladores y sus asociaciones de uso
+AdminRutaVisualController --> Ruta
+AdminRutaVisualController --> RepositorioEnMemoria
+AdminRutaVisualController --> NodoRuta
+
+DialogoCrearNodoController --> Ruta
+DialogoCrearNodoController --> RepositorioExterno
+DialogoCrearNodoController --> RecursoAprendizaje
+
+StudentDashboardController --> RepositorioEnMemoria
+StudentDashboardController --> Curso
+StudentDashboardController --> Ruta
+StudentDashboardController --> NodoRuta
+StudentDashboardController --> NodoDetalleController : usa >
+StudentDashboardController --> RutaController : usa >
+
+' Relaciones de MainRecursos con recursos
+MainRecursos ..> Video
+MainRecursos ..> Articulo
+MainRecursos ..> DocumentoPDF
+
+' Relaciones de MainEnriquecedorDeContenido con entidades principales
+MainEnriquecedorDeContenido --> Curso
+MainEnriquecedorDeContenido --> Ruta
+MainEnriquecedorDeContenido --> NodoRuta
+MainEnriquecedorDeContenido --> RecursoAprendizaje
+
+' Relaciones de selectorRolController con controladores principales
+selectorRolController ..> AdminRutaVisualController
+selectorRolController ..> StudentDashboardController
+
+' Relaciones GUI de navegación
+StudentDashboardController --> NodoDetalleController
+StudentDashboardController --> RutaController
+
+
+selectorRolController --> Button
+
+@enduml
