@@ -1,0 +1,98 @@
+{
+  "cursos": {
+    "1f776ce0-4742-489a-8ca2-af5c9491cef9": {
+      "id": "1f776ce0-4742-489a-8ca2-af5c9491cef9",
+      "nombre": "Python",
+      "descripcion": "Curso completo de Python desde cero.",
+      "modulos": [],
+      "rutas": [
+        {
+          "id": "365f9be1-40ea-4972-882d-186f296721bb",
+          "nombre": "Principiante",
+          "descripcion": "Conceptos básicos de Python.",
+          "nodos": []
+        }
+      ]
+    },
+    "e5320dbb-9b3c-47c8-a95d-63279ef3c56a": {
+      "id": "e5320dbb-9b3c-47c8-a95d-63279ef3c56a",
+      "nombre": "Java",
+      "descripcion": "Curso completo de Java desde cero.",
+      "modulos": [],
+      "rutas": [
+        {
+          "id": "4552131c-15fc-4c4d-b30c-063bc542f79c",
+          "nombre": "Principiante",
+          "descripcion": "Conceptos básicos para empezar.",
+          "nodos": [
+            {
+              "orden": 1,
+              "completado": true,
+              "leccion": {
+                "id": "cbc42f16-694d-48d3-8476-d809f398b905",
+                "titulo": "Bucles 'for' en Java",
+                "descripcion": "Domina la repetición de tareas.",
+                "estado": "PUBLICADO",
+                "temaCurso": "Java",
+                "nivel": "Principiante"
+              },
+              "materialDeApoyo": [
+                {
+                  "CLASSNAME": "GestionAprendizaje_Modulo.Modelo.DocumentoPDF",
+                  "INSTANCE": {
+                    "urlDescarga": "www.wiki.com",
+                    "numPaginas": 3,
+                    "id": "781e5751-d398-4fa0-903a-7681df97568c",
+                    "titulo": "Hola"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "lecciones": [
+    {
+      "id": "b424a78d-5767-442c-90da-3d61dd4f8cb7",
+      "titulo": "Variables en Java",
+      "descripcion": "Aprende los tipos de datos primitivos.",
+      "estado": "PUBLICADO",
+      "temaCurso": "Java",
+      "nivel": "Principiante"
+    },
+    {
+      "id": "cbc42f16-694d-48d3-8476-d809f398b905",
+      "titulo": "Bucles 'for' en Java",
+      "descripcion": "Domina la repetición de tareas.",
+      "estado": "PUBLICADO",
+      "temaCurso": "Java",
+      "nivel": "Principiante"
+    },
+    {
+      "id": "350e7f92-9d83-41f8-a312-943df524d383",
+      "titulo": "Clases y Objetos",
+      "descripcion": "El pilar de la POO.",
+      "estado": "PUBLICADO",
+      "temaCurso": "Java",
+      "nivel": "Intermedio"
+    },
+    {
+      "id": "b09d1cd8-634f-45cc-8ccd-e8f01d01b278",
+      "titulo": "Herencia y Polimorfismo",
+      "descripcion": "Conceptos avanzados de POO.",
+      "estado": "PUBLICADO",
+      "temaCurso": "Java",
+      "nivel": "Avanzado"
+    },
+    {
+      "id": "2a658c9c-a8d8-473c-a92a-8780a18ed485",
+      "titulo": "Variables y Listas",
+      "descripcion": "Fundamentos de Python.",
+      "estado": "PUBLICADO",
+      "temaCurso": "Python",
+      "nivel": "Principiante"
+    }
+  ]
+}
