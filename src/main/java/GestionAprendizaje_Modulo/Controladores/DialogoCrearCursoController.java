@@ -1,6 +1,7 @@
 package GestionAprendizaje_Modulo.Controladores;
 
 import GestionAprendizaje_Modulo.Modelo.Curso;
+import GestionAprendizaje_Modulo.Repositorio.CursoRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -44,6 +45,10 @@ public class DialogoCrearCursoController {
 
         // Si la validación es correcta, crea el objeto Curso.
         this.nuevoCurso = new Curso(nombre, descripcion);
+        CursoRepository.guardarCurso(this.nuevoCurso);
+
+        
+
 
         // Cierra la ventana del diálogo.
         cerrarVentana();

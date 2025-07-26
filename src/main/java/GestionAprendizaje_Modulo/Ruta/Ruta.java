@@ -7,14 +7,18 @@ public class Ruta {
     private String id;
     private String nombre;
     private String descripcion;
+    private String cursoId;
     private List<NodoRuta> nodos;
 
-    public Ruta(String id, String nombre, String descripcion) {
+    public Ruta(String id, String nombre, String descripcion, String cursoId) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.cursoId = cursoId;
         this.nodos = new ArrayList<>();
     }
+
+     public String getCursoId() { return cursoId; }
 
     public void agregarNodo(NodoRuta nodo) {
         nodos.add(nodo);
@@ -28,6 +32,14 @@ public class Ruta {
 
     public List<NodoRuta> getNodos() {
         return nodos;
+    }
+
+     public String getId() {
+        return id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
     }
 
     @Override

@@ -20,6 +20,12 @@ public class Video extends RecursoAprendizaje {
 
     // Implementación concreta del método abstracto de RecursoAprendizaje.
     // Devuelve un mensaje detallado con la URL del video y su duración en minutos.
+    public String getUrl() {
+        return url;
+    }
+    public int getDuracionSegundos() {
+        return duracionSegundos;
+    }
     @Override
     public String obtenerDetalle() {
         return String.format("Ver video en %s (%d minutos)", url, duracionSegundos / 60);

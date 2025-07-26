@@ -17,6 +17,13 @@ public class DocumentoPDF extends RecursoAprendizaje {
         this.urlDescarga = urlDescarga;
         this.numPaginas = numPaginas;
     }
+    public String getUrlDescarga() {
+        return urlDescarga;
+    }
+    public int getNumPaginas() {
+        return numPaginas;
+    }
+
 
     // Implementación concreta del método abstracto de RecursoAprendizaje.
     // Devuelve un mensaje con la cantidad de páginas y el enlace de descarga del PDF.

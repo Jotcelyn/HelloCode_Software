@@ -2,7 +2,6 @@ package GestionAprendizaje_Modulo.Modelo;
 // Importaciones necesarias para listas y generación de IDs únicos.
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import GestionAprendizaje_Modulo.Ruta.Ruta;
 /**
@@ -32,7 +31,15 @@ public class Curso {
     // Constructor que recibe nombre y descripción, genera ID único,
     // y crea listas vacías para módulos y rutas.
     public Curso(String nombre, String descripcion) {
-        this.id = UUID.randomUUID().toString();
+        this.id = java.util.UUID.randomUUID().toString();
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.modulos = new ArrayList<>();
+        this.rutas = new ArrayList<>();
+    }
+
+      public Curso(String id, String nombre, String descripcion) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.modulos = new ArrayList<>();

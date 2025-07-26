@@ -14,6 +14,10 @@ public class Articulo extends RecursoAprendizaje {
         this.url = url;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
     // Implementación concreta del método abstracto de RecursoAprendizaje.
     // Devuelve una cadena que invita al usuario a leer el artículo mediante su enlace.
     @Override

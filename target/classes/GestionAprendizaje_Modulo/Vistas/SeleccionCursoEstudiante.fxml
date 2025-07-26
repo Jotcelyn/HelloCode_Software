@@ -36,6 +36,12 @@
                 wrapText="true"
                 prefWidth="300"
                 prefHeight="200"/>
+                
+       <!-- Botón Continuar -->
+      <Button fx:id="btnContinuar"
+              text="Continuar"
+              prefWidth="300"
+              onAction="#handleContinuar"/>
     </VBox>
   </center>
 

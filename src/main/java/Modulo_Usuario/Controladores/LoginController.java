@@ -1,5 +1,14 @@
 package Modulo_Usuario.Controladores;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+
 import Modulo_Usuario.Clases.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,11 +18,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginController {
     @FXML private TextField usuarioField;
@@ -99,6 +103,32 @@ public class LoginController {
             contrasenaField.clear();
         }
     }
+//     if (usuarioEncontrado != null) {
+//     try {
+//         // Aquí decides a qué pantalla ir según el rol
+//         String fxmlDestino;
+//         if (usuarioEncontrado.getUsername().equalsIgnoreCase("admin")) {
+//             fxmlDestino = "/GestionAprendizaje_Modulo/Vistas/selectorRol.fxml"; // pantalla de admin
+//         } else {
+//             fxmlDestino = "/GestionAprendizaje_Modulo/Vistas/SeleccionCursoEstudiante.fxml"; // pantalla de estudiante
+//         }
+//         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlDestino));
+//         Scene scene = new Scene(fxmlLoader.load(), 360, 720);
+
+//         Stage stage = new Stage();
+//         stage.setTitle("Hello Code Software - Panel Principal");
+//         stage.setScene(scene);
+//         stage.setResizable(false);
+//         stage.show();
+
+//         Stage thisStage = (Stage) usuarioField.getScene().getWindow();
+//         thisStage.close();
+//     } catch (Exception e) {
+//         e.printStackTrace();
+//         mensajeLabel.setText("Error cargando pantalla de inicio: " + e.getMessage());
+//     }
+//   }
+// }
 
     @FXML
     public void irARegistro(ActionEvent event) {
