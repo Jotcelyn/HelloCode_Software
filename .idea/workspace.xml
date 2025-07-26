@@ -4,7 +4,163 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b728bb6-aea7-42e7-8506-4780762e03d1" name="Changes" comment="" />
+    <list default="true" id="9b728bb6-aea7-42e7-8506-4780762e03d1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionAprendizaje_Modulo/Vistas/AdminRutaVisual.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionAprendizaje_Modulo/Vistas/AdminRutaVisual.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionAprendizaje_Modulo/Vistas/SeleccionCursoEstudiante.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionAprendizaje_Modulo/Vistas/SeleccionCursoEstudiante.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/App/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/App/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/App/Main_GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/App/Main_GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/EntradaComunidad_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/EntradaComunidad_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionChat_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionChat_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionComunidad_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionComunidad_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionForo_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionForo_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionUsuarios_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/Controladores_GUI/GestionUsuarios_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/controladores/ContextoSistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/controladores/ContextoSistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/EstadoHilo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/EstadoHilo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/TipoInfraccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/TipoInfraccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/TipoSolucion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/TipoSolucion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/TipoTema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/enums/TipoTema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/integracion/ComunidadModuloEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/integracion/ComunidadModuloEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/integracion/ModuloUsuariosReal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/integracion/ModuloUsuariosReal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/integracion/ModuloUsuariosSimulado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/integracion/ModuloUsuariosSimulado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/ChatPrivado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/ChatPrivado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Comunidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Comunidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/ForoGeneral.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/ForoGeneral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/GrupoCompartir.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/GrupoCompartir.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/GrupoDiscusion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/GrupoDiscusion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/HiloDiscusion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/HiloDiscusion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Mensaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Mensaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Moderador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Moderador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Respuesta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Respuesta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/SancionUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/SancionUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Solucion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/modelo/Solucion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ComunidadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ComunidadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ModeracionService$EstadisticasModeración.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ModeracionService$EstadisticasModeración.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ModeracionService$ResultadoModeracion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ModeracionService$ResultadoModeracion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ModeracionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/servicios/ModeracionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/utilidades/FiltroContenido$ResultadoModeración.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/utilidades/FiltroContenido$ResultadoModeración.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/utilidades/FiltroContenido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Comunidad_Modulo/utilidades/FiltroContenido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Desafio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Desafio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/DesafioMensual.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/DesafioMensual.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/DesafioSemanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/DesafioSemanal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Estadistica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Estadistica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/DetalleDesafioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/DetalleDesafioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/MainGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/MainGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/AdminMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/AdminMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/AsignarDesafioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/AsignarDesafioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/CrearDesafioMensualController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/CrearDesafioMensualController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/CrearDesafioSemanalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/CrearDesafioSemanalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/CrearLogroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/CrearLogroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/SimularActividadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/admin/SimularActividadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/DesafiosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/DesafiosController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/PerfilUsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/PerfilUsuarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/RankingController$EstudianteRanking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/RankingController$EstudianteRanking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/RankingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/controllers/RankingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/utils/AlertUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/GUI/utils/AlertUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Logro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Logro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/MainConsola.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/MainConsola.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/ProgresoEstudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/ProgresoEstudiante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Ranking$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Ranking$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Ranking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/Ranking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/VisualizacionLogros.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/VisualizacionLogros.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/VisualizacionProgreso.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/VisualizacionProgreso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/VisualizadorEstadistico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Gamificacion_Modulo/VisualizadorEstadistico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Aplicacion/GUI_Contenido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Aplicacion/GUI_Contenido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/AdminRutaVisualController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/AdminRutaVisualController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/AdminRutaVisualController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/AdminRutaVisualController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/AdminRutaVisualController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/AdminRutaVisualController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/DialogoCrearCursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/DialogoCrearCursoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/DialogoCrearNodoController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/DialogoCrearNodoController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/DialogoCrearNodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/DialogoCrearNodoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/EntradaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/EntradaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/ModuloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/ModuloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/NodoDetalleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/NodoDetalleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/RutaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/RutaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/SeleccionCursoEstudianteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/SeleccionCursoEstudianteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/selectorRolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/selectorRolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Gestor/GestorDeModuloEducativo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Gestor/GestorDeModuloEducativo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Gestor/ValidadorDeContenido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Gestor/ValidadorDeContenido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/MainEnriquecedorDeContenido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/MainEnriquecedorDeContenido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/MainRecursos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/MainRecursos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Articulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Articulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/DocumentoPDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/DocumentoPDF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Leccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Leccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/ModuloEducativo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/ModuloEducativo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/RecursoAprendizaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/RecursoAprendizaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Video.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Modelo/Video.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Repositorio/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Repositorio/CursoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Repositorio/NodoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Repositorio/NodoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Repositorio/RutaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Repositorio/RutaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Ruta/NodoRuta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Ruta/NodoRuta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Ruta/Ruta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Ruta/Ruta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/ComienzoLeccionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/ComienzoLeccionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/LeccionCompletadaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/LeccionCompletadaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/LeccionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/LeccionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/LeccionViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/LeccionViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/PantallaPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/Controllers/PantallaPrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/LenguajeProgramacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/LenguajeProgramacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/NivelDificultad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/NivelDificultad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/TipoEjercicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/TipoEjercicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/TipoLeccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/enums/TipoLeccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/filtros/FiltroPorDificultad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/filtros/FiltroPorDificultad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/filtros/FiltroPorLenguaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/filtros/FiltroPorLenguaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/filtros/FiltroPorTipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/filtros/FiltroPorTipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/main/GUI_Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/main/GUI_Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/AdaptadorEjercicios.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/AdaptadorEjercicios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/DetalleLeccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/DetalleLeccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/Ejercicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/Ejercicio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/EvaluadorAvanzado.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/EvaluadorAvanzado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorEjercicios.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorEjercicios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorLecciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorLecciones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso$ConfiguracionUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso$ConfiguracionUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso$EstadisticasUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso$EstadisticasUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso$LeccionCompletada.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso$LeccionCompletada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/GestorProgreso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/Leccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/Leccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/ResultadoEvaluacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/model/ResultadoEvaluacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/EstrategiaLeccionDiagnostico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/EstrategiaLeccionDiagnostico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/EstrategiaLeccionNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/EstrategiaLeccionNormal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/EstrategiaLeccionPrueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/EstrategiaLeccionPrueba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/FabricaEstrategiasLeccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestorEjercicios/strategy/FabricaEstrategiasLeccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MetodosGlobales/MetodosFrecuentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MetodosGlobales/MetodosFrecuentes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/EjercicioCompletarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/EjercicioCompletarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/EjercicioSeleccionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/EjercicioSeleccionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/GUIEntrada_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/GUIEntrada_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/GUIPerfil_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/Controladores/GUIPerfil_Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/DataBase/EjercicioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/DataBase/EjercicioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/application/MainGUICompletarCodigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/application/MainGUICompletarCodigo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/application/MainGUIEjerciciosSeleccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/application/MainGUIEjerciciosSeleccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/application/Main_Consola.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/application/Main_Consola.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioCompletarCodigo$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioCompletarCodigo$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioCompletarCodigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioCompletarCodigo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioSeleccion$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioSeleccion$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioSeleccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/EjercicioSeleccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/Lenguaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/Lenguaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/NivelDificultad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/NivelDificultad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/RespuestaString.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/RespuestaString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/ResultadoDeEvaluacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/exercises/ResultadoDeEvaluacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/otrosModulos/Contenido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/otrosModulos/Contenido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/otrosModulos/Leccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Ejercicios/otrosModulos/Leccion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/NivelJava.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/NivelJava.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/UsuarioAdministrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/UsuarioAdministrador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/UsuarioComunidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/UsuarioComunidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/UsuarioTemp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Clases/UsuarioTemp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/CrudController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/CrudController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/CrudController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/CrudController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/MainGeneralGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/MainGeneralGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/SplashController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/Controladores/SplashController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Modulo_Usuario/application/MainGUIUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Modulo_Usuario/application/MainGUIUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,15 +174,40 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="30QHIa9QhDcPyxyJq0LjZhwCYz8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.GUI_Contenido.executor": "Run"
+    "Application.GUI_Contenido.executor": "Run",
+    "Application.MainGUI.executor": "Run",
+    "Application.MainGUIUsuario.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "modificaciones-Contenido"
   }
 }]]></component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b728bb6-aea7-42e7-8506-4780762e03d1" name="Changes" comment="" />
+      <created>1753552800947</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753552800947</updated>
+    </task>
     <servers />
   </component>
 </project>

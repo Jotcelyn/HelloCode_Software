@@ -1,60 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="GestionAprendizaje_Modulo.Controladores.SeleccionCursoEstudianteController"
-            prefWidth="360.0" prefHeight="640.0">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionAprendizaje_Modulo.Controladores.SeleccionCursoEstudianteController">
 
   <!-- Título -->
   <top>
-    <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
-      <Label text="Elige tu Curso"
-             style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <VBox alignment="CENTER" prefHeight="44.0" prefWidth="360.0" spacing="10" style="-fx-background-color: #5A5F89;" BorderPane.alignment="CENTER">
+      <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Elige tu Curso">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
     </VBox>
   </top>
 
   <!-- Contenido central -->
   <center>
-    <VBox alignment="TOP_CENTER" spacing="15" BorderPane.alignment="CENTER">
+    <VBox alignment="TOP_CENTER" prefHeight="543.0" prefWidth="357.0" spacing="15" style="-fx-background-color: #424874;" BorderPane.alignment="CENTER">
       <!-- Aquí va el padding correctamente -->
       <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets bottom="20" left="20" right="20" top="20" />
       </padding>
 
       <!-- ComboBox con los cursos que creó el admin -->
-      <ComboBox fx:id="comboCursos"
-                promptText="Selecciona un curso..."
-                prefWidth="300"
-                onAction="#onCursoSeleccionado"/>
+      <ComboBox fx:id="comboCursos" onAction="#onCursoSeleccionado" prefWidth="300" promptText="Selecciona un curso..." style="-fx-background-color: #CACFD6; -fx-background-radius: 8;" />
 
       <!-- Área de descripción no editable -->
-      <TextArea fx:id="txtDescripcion"
-                editable="false"
-                wrapText="true"
-                prefWidth="300"
-                prefHeight="200"/>
+      <TextArea fx:id="txtDescripcion" editable="false" prefHeight="200" prefWidth="300" style="-fx-background-color: #CACFD6; -fx-border-radius: 8;" wrapText="true" />
                 
        <!-- Botón Continuar -->
-      <Button fx:id="btnContinuar"
-              text="Continuar"
-              prefWidth="300"
-              onAction="#handleContinuar"/>
+      <Button fx:id="btnContinuar" onAction="#handleContinuar" prefWidth="300" style="-fx-background-color: #A6B1E1; -fx-text-fill: #424874; -fx-background-radius: 8;" text="Continuar">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
     </VBox>
   </center>
 
   <!-- Pie con botón Atrás -->
   <bottom>
-    <HBox alignment="CENTER_RIGHT" spacing="10" BorderPane.alignment="CENTER">
+    <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-background-color: #424874;" BorderPane.alignment="CENTER">
       <!-- Padding en HBox -->
       <padding>
-        <Insets top="10" right="20" bottom="20" left="0"/>
+        <Insets bottom="20" left="0" right="20" top="10" />
       </padding>
 
-      <Button text="Atrás"
-              onAction="#handleAtras"/>
+      <Button onAction="#handleAtras" style="-fx-background-color: #A6B1E1; -fx-text-fill: #424874; -fx-background-radius: 8;" text="Atrás">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
     </HBox>
   </bottom>
 </BorderPane>
