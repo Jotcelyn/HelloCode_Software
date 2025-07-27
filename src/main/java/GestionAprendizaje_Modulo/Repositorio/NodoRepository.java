@@ -12,7 +12,7 @@ import java.util.Map;
 
 import GestionAprendizaje_Modulo.Modelo.Articulo;
 import GestionAprendizaje_Modulo.Modelo.DocumentoPDF;
-import GestionAprendizaje_Modulo.Modelo.Leccion;
+import GestorEjercicios.model.Leccion;
 import GestionAprendizaje_Modulo.Modelo.RecursoAprendizaje;
 import GestionAprendizaje_Modulo.Modelo.Video;
 import GestionAprendizaje_Modulo.Ruta.NodoRuta;
@@ -46,7 +46,7 @@ public class NodoRepository {
                 String linea = String.join("|",
                         ruta.getId(),
                         String.valueOf(nodo.getOrden()),
-                        nodo.getLeccion().getId(),
+                        String.valueOf(nodo.getLeccion().getId()),
                         recursos.toString());
                 bw.write(linea);
                 bw.newLine();

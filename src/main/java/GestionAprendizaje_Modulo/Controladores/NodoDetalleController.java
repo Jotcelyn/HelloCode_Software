@@ -1,6 +1,6 @@
 package GestionAprendizaje_Modulo.Controladores;
 
-import GestionAprendizaje_Modulo.Modelo.Leccion; // --> Importante añadir esta clase
+import GestorEjercicios.model.Leccion; // --> Importante añadir esta clase
 import GestionAprendizaje_Modulo.Modelo.RecursoAprendizaje;
 import GestionAprendizaje_Modulo.Ruta.NodoRuta;
 import javafx.event.ActionEvent; // --> Importante añadir esta clase
@@ -34,8 +34,8 @@ public class NodoDetalleController {
         this.leccionActual = nodo.getLeccion();
 
         // 1. Poblar la información de la Lección
-        labelTituloLeccion.setText(leccionActual.getTitulo());
-        textDescripcionLeccion.setText(leccionActual.getDescripcion());
+        labelTituloLeccion.setText(leccionActual.getNombre());
+        textDescripcionLeccion.setText(leccionActual.getTipo().name());
 
         // 2. Poblar dinámicamente el material de apoyo
         vboxRecursos.getChildren().clear();
@@ -68,7 +68,7 @@ public class NodoDetalleController {
             // Por ahora, mostramos una alerta para confirmar que funciona.
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Navegación a Módulo Externo");
-            alert.setHeaderText("Abriendo la lección: " + leccionActual.getTitulo());
+            alert.setHeaderText("Abriendo la lección: " + leccionActual.getNombre());
             alert.setContentText("En este punto, la aplicación cargaría la vista de ejercicios correspondiente a esta lección, que está siendo desarrollada por otro equipo.");
             alert.showAndWait();
 

@@ -33,6 +33,7 @@ module Modulo_Ejercicio {
     exports GestionAprendizaje_Modulo.Modelo;
     exports GestionAprendizaje_Modulo.Repositorio;
     exports GestionAprendizaje_Modulo.Gestor;
+    exports GestionAprendizaje_Modulo.Servicio;
 
     exports Comunidad_Modulo.App;
     exports Comunidad_Modulo.integracion;
@@ -53,7 +54,6 @@ module Modulo_Ejercicio {
     exports Modulo_Usuario.application;
 
     exports GestorEjercicios.Controllers;
-    exports GestorEjercicios.filtros;
     exports GestorEjercicios.model;
 
     exports MetodosGlobales;
