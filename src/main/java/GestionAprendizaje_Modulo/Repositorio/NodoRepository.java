@@ -12,11 +12,11 @@ import java.util.Map;
 
 import GestionAprendizaje_Modulo.Modelo.Articulo;
 import GestionAprendizaje_Modulo.Modelo.DocumentoPDF;
-import GestionAprendizaje_Modulo.Modelo.Leccion;
 import GestionAprendizaje_Modulo.Modelo.RecursoAprendizaje;
 import GestionAprendizaje_Modulo.Modelo.Video;
 import GestionAprendizaje_Modulo.Ruta.NodoRuta;
 import GestionAprendizaje_Modulo.Ruta.Ruta;
+import GestorEjercicios.model.Leccion; // <-- Cambia el import
 
 public class NodoRepository {
     private static final String RUTA_BASE = "src/main/resources/GestionAprendizaje_Modulo/data/";
@@ -46,7 +46,7 @@ public class NodoRepository {
                 String linea = String.join("|",
                         ruta.getId(),
                         String.valueOf(nodo.getOrden()),
-                        nodo.getLeccion().getId(),
+                        String.valueOf(nodo.getLeccion().getId()), // <-- Usa el id de la lección de ejercicios
                         recursos.toString());
                 bw.write(linea);
                 bw.newLine();

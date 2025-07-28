@@ -3,8 +3,8 @@ package GestionAprendizaje_Modulo.Ruta;
 import java.util.ArrayList;
 import java.util.List;
 
-import GestionAprendizaje_Modulo.Modelo.Leccion;
 import GestionAprendizaje_Modulo.Modelo.RecursoAprendizaje;
+import GestorEjercicios.model.Leccion;
 
 public class NodoRuta {
     private int orden;
@@ -65,7 +65,7 @@ public class NodoRuta {
         return "NodoRuta{" +
                 "orden=" + orden +
                 ", completado=" + completado +
-                ", leccionTest=" + leccion.getTitulo() +
+                ", leccion=" + (leccion != null ? leccion.getNombre() : "null") +
                 '}';
     }
 }

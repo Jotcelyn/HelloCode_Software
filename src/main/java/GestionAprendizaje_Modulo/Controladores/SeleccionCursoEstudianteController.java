@@ -8,7 +8,9 @@ import GestionAprendizaje_Modulo.Modelo.Curso;
 import GestionAprendizaje_Modulo.Repositorio.CursoRepository;
 import MetodosGlobales.MetodosFrecuentes;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
@@ -54,13 +56,25 @@ public class SeleccionCursoEstudianteController implements Initializable {
     // }
 
     @FXML
-    private void handleContinuar() {
-        // Solo muestra un aviso informativo
-        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-        alert.setTitle("Funcionalidad en desarrollo");
-        alert.setHeaderText("Próximamente");
-        alert.setContentText("La funcionalidad de continuar con el curso está siendo desarrollada por otro equipo.");
-        alert.showAndWait();
+    private void handleContinuar() throws Exception {
+        // Cargar la vista del dashboard del estudiante
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GestionAprendizaje_Modulo/Vistas/StudentDashboard.fxml"));
+        Parent root = loader.load();
+
+        // Obtener el controlador de la nueva vista y pasarle la ruta seleccionada
+        StudentDashboardController controller = loader.getController();
+        // Aquí deberías obtener la ruta del curso seleccionado. Asegúrate de tener un método en el controlador de StudentDashboard
+        // que reciba esta información. Por ahora, se deja comentado como referencia.
+        // String rutaSeleccionada = ...;
+        // controller.setRuta(rutaSeleccionada);
+
+        // Cambiar a la nueva vista
+        Stage stage = (Stage) comboCursos.getScene().getWindow();
+        MetodosFrecuentes.cambiarVentana(
+            stage,
+            "/GestionAprendizaje_Modulo/Vistas/StudentDashboard.fxml",
+            "DASHBOARD ESTUDIANTE"
+        );
     }   
 
     @FXML

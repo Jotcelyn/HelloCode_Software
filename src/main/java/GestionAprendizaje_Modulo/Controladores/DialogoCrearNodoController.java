@@ -2,12 +2,13 @@ package GestionAprendizaje_Modulo.Controladores;
 
 import GestionAprendizaje_Modulo.Modelo.Articulo;
 import GestionAprendizaje_Modulo.Modelo.DocumentoPDF;
-import GestionAprendizaje_Modulo.Modelo.Leccion;
-// import GestionAprendizaje_Modulo.Modelo.ModuloEducativo;
 import GestionAprendizaje_Modulo.Modelo.RecursoAprendizaje;
 import GestionAprendizaje_Modulo.Modelo.Video;
 import GestionAprendizaje_Modulo.Ruta.NodoRuta;
 import GestionAprendizaje_Modulo.Ruta.Ruta;
+import GestorEjercicios.GestorEjerciciosEntry;
+import GestorEjercicios.integracion.IGestorEjercicios;
+import GestorEjercicios.model.Leccion;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -51,7 +52,7 @@ public class DialogoCrearNodoController {
 
         comboLecciones.setConverter(new StringConverter<>() {
             @Override public String toString(Leccion lec) {
-                return lec == null ? "" : lec.getTitulo();
+                return lec == null ? "" : lec.getNombre();
             }
             @Override public Leccion fromString(String s) { return null; }
         });
@@ -59,22 +60,13 @@ public class DialogoCrearNodoController {
 
     /** Carga las lecciones asociadas al curso de esta ruta */
     private void cargarLeccionesDisponibles() {
-        if (rutaActual == null) return;
+        // Obtén la instancia del gestor de ejercicios
+        IGestorEjercicios gestorEjercicios = GestorEjerciciosEntry.obtenerGestor();
 
-        // 1) Cargar todos los cursos y encontrar el de esta ruta
-        // List<ModuloEducativo> modulos = CursoRepository.cargarCursos().stream()
-        //     .filter(c -> c.getId().equals(rutaActual.getCursoId()))
-        //     .findFirst()
-        //     .map(Curso -> Curso.getModulos())
-        //     .orElse(Collections.emptyList());
+        // Puedes filtrar por curso/ruta si tienes esa lógica, aquí se cargan todas
+        var lecciones = gestorEjercicios.obtenerTodasLasLecciones();
 
-        // 2) Extraer y aplanar todas las lecciones de esos módulos
-        // List<Leccion> lecciones = modulos.stream()
-        //     .flatMap(mod -> mod.getLecciones().stream())
-        //     .collect(Collectors.toList());
-
-        // 3) Ponerlas en el combo
-        // comboLecciones.setItems(FXCollections.observableArrayList(lecciones));
+        comboLecciones.setItems(FXCollections.observableArrayList(lecciones));
     }
 
     @FXML

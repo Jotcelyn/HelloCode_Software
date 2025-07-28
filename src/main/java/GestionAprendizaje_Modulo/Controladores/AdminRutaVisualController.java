@@ -3,15 +3,20 @@ package GestionAprendizaje_Modulo.Controladores;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 import GestionAprendizaje_Modulo.Modelo.Curso;
 import GestionAprendizaje_Modulo.Repositorio.CursoRepository;
+import GestionAprendizaje_Modulo.Repositorio.NodoRepository;
 import GestionAprendizaje_Modulo.Repositorio.RutaRepository;
 import GestionAprendizaje_Modulo.Ruta.NodoRuta;
 import GestionAprendizaje_Modulo.Ruta.Ruta;
+import GestorEjercicios.GestorEjerciciosEntry;
+import GestorEjercicios.integracion.IGestorEjercicios;
+import GestorEjercicios.model.Leccion;
 import MetodosGlobales.MetodosFrecuentes;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -51,6 +56,13 @@ public class AdminRutaVisualController {
         // 1) Cargar cursos y rutas desde archivos
         cursos = CursoRepository.cargarCursos();
         todasRutas = RutaRepository.cargarRutas(cursos);
+
+        // 2) Cargar lecciones desde el módulo de ejercicios y asociar nodos
+        IGestorEjercicios gestorEjercicios = GestorEjerciciosEntry.obtenerGestor();
+        List<Leccion> lecciones = gestorEjercicios.obtenerTodasLasLecciones();
+        Map<String, Leccion> mapaLecciones = lecciones.stream()
+            .collect(Collectors.toMap(l -> String.valueOf(l.getId()), l -> l));
+        NodoRepository.cargarNodos(todasRutas, mapaLecciones);
 
         comboCursos.setItems(FXCollections.observableArrayList(cursos));
         btnNuevaRuta.setDisable(true);
@@ -209,7 +221,7 @@ public class AdminRutaVisualController {
         textoOrden.setFont(Font.font("System", 12));
         textoOrden.setFill(Color.WHITE);
         javafx.scene.layout.StackPane stack = new javafx.scene.layout.StackPane(circulo, textoOrden);
-        Text textoLeccion = new Text(nodo.getLeccion().getTitulo());
+        Text textoLeccion = new Text(nodo.getLeccion().getNombre());
         textoLeccion.setFont(Font.font("System", 14));
         nodoBox.getChildren().addAll(stack, textoLeccion);
         return nodoBox;
