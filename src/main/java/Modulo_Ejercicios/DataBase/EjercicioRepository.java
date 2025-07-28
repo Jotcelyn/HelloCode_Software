@@ -35,6 +35,7 @@ public class EjercicioRepository {
                     }
                 }
             }
+            System.out.println("Si se cargo bien");
         } catch (IOException e) {
             System.out.println("Error al cargar ejercicios de selección: " + e.getMessage());
         }
@@ -59,6 +60,7 @@ public class EjercicioRepository {
                     }
                 }
             }
+            System.out.println("Si se cargo bien");
         } catch (IOException e) {
             System.out.println("Error al cargar ejercicios de completar código: " + e.getMessage());
         }

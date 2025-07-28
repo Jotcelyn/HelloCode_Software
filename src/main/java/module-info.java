@@ -33,7 +33,6 @@ module Modulo_Ejercicio {
     exports GestionAprendizaje_Modulo.Modelo;
     exports GestionAprendizaje_Modulo.Repositorio;
     exports GestionAprendizaje_Modulo.Gestor;
-    exports GestionAprendizaje_Modulo.Servicio;
 
     exports Comunidad_Modulo.App;
     exports Comunidad_Modulo.integracion;
@@ -55,6 +54,7 @@ module Modulo_Ejercicio {
 
     exports GestorEjercicios.Controllers;
     exports GestorEjercicios.model;
+    exports GestorEjercicios.main; //Siempre me daba fallo pporque falta este export xd
 
     exports MetodosGlobales;
 }

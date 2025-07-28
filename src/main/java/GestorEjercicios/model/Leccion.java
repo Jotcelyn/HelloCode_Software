@@ -1,20 +1,25 @@
 package GestorEjercicios.model;
 
-import GestorEjercicios.enums.TipoLeccion;
-import GestorEjercicios.enums.NivelDificultad;
+import java.util.ArrayList;
+import java.util.List;
+
+import GestorEjercicios.adaptadores.AdaptadorEjercicios;
+import GestorEjercicios.adaptadores.FabricaAdaptadores;
 import GestorEjercicios.enums.LenguajeProgramacion;
+import GestorEjercicios.enums.NivelDificultad;
+import GestorEjercicios.enums.TipoLeccion;
 import GestorEjercicios.strategy.EstrategiaLeccion;
 import GestorEjercicios.strategy.EstrategiaLeccionPrueba;
 import GestorEjercicios.strategy.FabricaEstrategiasLeccion;
-import GestorEjercicios.adaptadores.AdaptadorEjercicios;
-import GestorEjercicios.adaptadores.FabricaAdaptadores;
-
-import java.util.List;
-import java.util.ArrayList;
 
 public class Leccion {
     private int id;
     private String nombre;
+    
+    public String getNombre() {
+        return nombre;
+    }
+
     private List<AdaptadorEjercicios> ejercicios; // Lista unificada de ejercicios usando adaptadores
     private TipoLeccion tipo;
     private EstrategiaLeccion estrategia;
@@ -61,8 +66,8 @@ public class Leccion {
     /**
      * Constructor completo con todos los parámetros
      */
-    public Leccion(int id, String nombre, List<?> ejercicios, TipoLeccion tipo,
-                   int experiencia, int conocimiento, NivelDificultad dificultad,
+    public Leccion(int id, String nombre, List<?> ejercicios, TipoLeccion tipo, 
+                   int experiencia, int conocimiento, NivelDificultad dificultad, 
                    LenguajeProgramacion lenguaje) {
         this.id = id;
         this.nombre = nombre;
@@ -107,10 +112,10 @@ public class Leccion {
         if (ejercicios.isEmpty()) {
             return NivelDificultad.BASICO;
         }
-
+        
         // Contar ejercicios por nivel de dificultad
         int basicos = 0, intermedios = 0, avanzados = 0;
-
+        
         for (AdaptadorEjercicios ejercicio : ejercicios) {
             String dificultadStr = ejercicio.obtenerNivelDificultad();
             switch (dificultadStr.toUpperCase()) {
@@ -125,7 +130,7 @@ public class Leccion {
                     break;
             }
         }
-
+        
         // Determinar dificultad predominante
         if (avanzados > intermedios && avanzados > basicos) {
             return NivelDificultad.AVANZADO;
@@ -143,10 +148,10 @@ public class Leccion {
         if (ejercicios.isEmpty()) {
             return LenguajeProgramacion.JAVA;
         }
-
+        
         // Contar ejercicios por lenguaje
         int java = 0, python = 0, javascript = 0;
-
+        
         for (AdaptadorEjercicios ejercicio : ejercicios) {
             String lenguajeStr = ejercicio.obtenerLenguaje();
             switch (lenguajeStr.toUpperCase()) {
@@ -161,7 +166,7 @@ public class Leccion {
                     break;
             }
         }
-
+        
         // Determinar lenguaje predominante
         if (python > java && python > javascript) {
             return LenguajeProgramacion.PYTHON;
@@ -177,8 +182,8 @@ public class Leccion {
     }
 
     public String obtenerResumen() {
-        return "Lección '" + nombre + "' (" + tipo + ") - " + dificultad + " - " + lenguaje +
-                " con " + ejercicios.size() + " ejercicios.";
+        return "Lección '" + nombre + "' (" + tipo + ") - " + dificultad + " - " + lenguaje + 
+               " con " + ejercicios.size() + " ejercicios.";
     }
 
     public TipoLeccion getTipo() {
@@ -285,9 +290,5 @@ public class Leccion {
             return ejercicios.get(indice);
         }
         return null;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 }

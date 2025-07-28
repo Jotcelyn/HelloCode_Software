@@ -90,7 +90,7 @@ public class Main extends Application {
                 stageActivo = primaryStage;
             } else {
                 // Buscar cualquier Stage abierto de JavaFX
-                for (javafx.stage.Window window : javafx.stage.Stage.getWindows()) {
+                for (javafx.stage.Window window : Stage.getWindows()) {
                     if (window instanceof Stage && window.isShowing()) {
                         stageActivo = (Stage) window;
                         break;

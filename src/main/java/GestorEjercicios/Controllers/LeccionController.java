@@ -1,7 +1,6 @@
 package GestorEjercicios.Controllers;
 
 import GestorEjercicios.model.GestorLecciones;
-import GestorEjercicios.strategy.EstrategiaLeccion;
 import GestorEjercicios.strategy.FabricaEstrategiasLeccion;
 import GestorEjercicios.enums.TipoLeccion;
 import GestorEjercicios.model.Leccion;
@@ -18,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class LeccionController {
@@ -90,7 +90,8 @@ public class LeccionController {
         }
 
         // Crear la estrategia correspondiente usando la fábrica
-        EstrategiaLeccion estrategia = FabricaEstrategiasLeccion.crearEstrategia(tipoLeccion);
+        // La estrategia se aplicará automáticamente en la lección
+        FabricaEstrategiasLeccion.crearEstrategia(tipoLeccion);
 
         // Obtener los ejercicios de la base de datos (List<EjercicioSeleccion>)
         List<EjercicioSeleccion> ejercicios = EjercicioRepository.cargarEjerciciosSeleccion().stream()
@@ -170,12 +171,14 @@ public class LeccionController {
     private void resaltarBotonDificultadSeleccionado(NivelDificultad dificultad) {
         String estiloSeleccionado = "-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;";
         switch (dificultad) {
+            case PRINCIPIANTE:
             case BASICO:
                 btnBasico.setStyle(estiloSeleccionado);
                 break;
             case INTERMEDIO:
                 btnIntermedio.setStyle(estiloSeleccionado);
                 break;
+            case EXPERTO:
             case AVANZADO:
                 btnAvanzado.setStyle(estiloSeleccionado);
                 break;
@@ -187,11 +190,15 @@ public class LeccionController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Modulo_Ejercicios/views/SeleccionMultiple-view.fxml"));
             Parent root = loader.load();
             Modulo_Ejercicios.Controladores.EjercicioSeleccionController controller = loader.getController();
-            // Convertir la lista de AdaptadorEjercicios a EjercicioSeleccion
-            List<EjercicioSeleccion> ejerciciosSeleccion = leccion.getEjercicios().stream()
-                    .filter(e -> e instanceof GestorEjercicios.adaptadores.AdaptadorEjercicioSeleccion)
-                    .map(e -> ((GestorEjercicios.adaptadores.AdaptadorEjercicioSeleccion) e).obtenerEjercicioOriginal())
-                    .collect(Collectors.toList());
+            // Usar el método correcto para obtener ejercicios de la lección
+            // Necesitamos extraer los ejercicios originales de los adaptadores
+            List<EjercicioSeleccion> ejerciciosSeleccion = new ArrayList<>();
+            for (GestorEjercicios.adaptadores.AdaptadorEjercicios adaptador : leccion.getEjercicios()) {
+                if (adaptador instanceof GestorEjercicios.adaptadores.AdaptadorEjercicioSeleccion) {
+                    // Cast seguro y extraer el ejercicio original
+                    ejerciciosSeleccion.add(((GestorEjercicios.adaptadores.AdaptadorEjercicioSeleccion) adaptador).obtenerEjercicioOriginal());
+                }
+            }
             controller.setEjercicios(ejerciciosSeleccion);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));

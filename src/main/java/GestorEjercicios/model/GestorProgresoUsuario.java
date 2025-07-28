@@ -126,7 +126,7 @@ public class GestorProgresoUsuario {
         // Crear registro de lección completada
         LeccionCompletada leccionCompletada = new LeccionCompletada(
             leccion.getId(),
-            leccion.getNombre(),
+            leccion.obtenerResumen(),
             aciertos,
             leccion.getNumeroEjercicios(),
             experienciaGanada,

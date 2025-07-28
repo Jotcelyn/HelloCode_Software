@@ -1,8 +1,2 @@
 4c773a55-4537-4c62-bf17-f85ef6737e94|0e4c0e45-a347-4433-bed2-f0b5e71a69dc|Principiante|Ruta nivel Principiante
-e52c083c-cb52-416e-bcb5-bc48ef96a16e|0bc2de2d-0a0d-4207-a254-8cf0af6623ff|Principiante|Ruta de nivel Principiante
-3fba0a05-8755-4df8-ae21-8472a61cb76a|2e83ae42-3ea7-4b33-b323-4ea2ce05b436|Principiante|Ruta de nivel Principiante
-08130a77-327c-461a-b9b4-d61af37ee1e7|2e83ae42-3ea7-4b33-b323-4ea2ce05b436|Intermedio|Ruta de nivel Intermedio
-f0bac8c5-42cb-4532-8f1f-2d94e472f3eb|2e83ae42-3ea7-4b33-b323-4ea2ce05b436|Intermedio|Ruta de nivel Intermedio
-337150fe-82df-4e10-a4a4-a8de0a1c39b1|2e83ae42-3ea7-4b33-b323-4ea2ce05b436|Principiante|Ruta de nivel Principiante
-ad94f7f4-d0b9-46da-b517-31a6407efebd|2e83ae42-3ea7-4b33-b323-4ea2ce05b436|Avanzado|Ruta de nivel Avanzado
-97832220-19ca-4569-9780-3c3844edc4b8|2e83ae42-3ea7-4b33-b323-4ea2ce05b436|Principiante|Ruta de nivel Principiante
+f8ed53e6-c087-4e2c-8769-24fbf9df1502|56085086-8285-4659-b519-c69dd5feefc6|Principiante|Ruta nivel Principiante

@@ -506,7 +506,7 @@ public class GestionChat_Controller implements Initializable {
         info.append("=== INFORMACIÓN DE CHATS PRIVADOS ===\n\n");
 
         if (contexto.tieneComunidadActiva()) {
-            Comunidad_Modulo.modelo.Comunidad comunidad = contexto.getComunidadActual();
+            Comunidad comunidad = contexto.getComunidadActual();
             List<ChatPrivado> chats = comunidad.getChatsPrivados();
 
             info.append("📌 Comunidad: ").append(comunidad.getNombre()).append("\n");

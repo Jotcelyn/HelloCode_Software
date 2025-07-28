@@ -22,7 +22,7 @@ public class Curso {
 
     // Lista de módulos temáticos asociados a este curso (contenido "jalado").
     // Cada módulo puede contener lecciones y recursos propios.
-    private final List<ModuloEducativo> modulos;
+    // private final List<ModuloEducativo> modulos;
 
     // Lista de rutas de aprendizaje disponibles para este curso (contenido "jalado").
     // Una ruta es una secuencia de lecciones organizadas de forma visual.
@@ -34,7 +34,7 @@ public class Curso {
         this.id = java.util.UUID.randomUUID().toString();
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.modulos = new ArrayList<>();
+        // this.modulos = new ArrayList<>();
         this.rutas = new ArrayList<>();
     }
 
@@ -42,7 +42,7 @@ public class Curso {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.modulos = new ArrayList<>();
+        // this.modulos = new ArrayList<>();
         this.rutas = new ArrayList<>();
     }
 
@@ -59,9 +59,9 @@ public class Curso {
      * Devuelve la lista de módulos temáticos asociados.
      * El contenido de esta lista es gestionado por otro equipo.
      */
-    public List<ModuloEducativo> getModulos() {
-        return modulos;
-    }
+    // public List<ModuloEducativo> getModulos() {
+    //     return modulos;
+    // }
 
     /**
      * Devuelve las rutas de aprendizaje disponibles en el curso.

@@ -30,7 +30,7 @@ public class CrudController {
     @FXML private ComboBox<NivelJava> nivelJavaCombo;
     @FXML private TextField reputacionField;
     @FXML private VBox camposAdmin;
-    @FXML private TextField nivelAccesoField;
+    @FXML private ComboBox<Roles> rolAdminCombo;
     @FXML private CheckBox esSuperAdminCheck;
     
     private final String ARCHIVO_USUARIOS = "src/main/java/Modulo_Usuario/Usuarios/usuarios.txt";
@@ -59,6 +59,13 @@ public class CrudController {
         ObservableList<NivelJava> nivelesJava = FXCollections.observableArrayList(NivelJava.values());
         nivelJavaCombo.setItems(nivelesJava);
         nivelJavaCombo.getSelectionModel().selectFirst();
+
+        // Configurar roles de administrador
+        ObservableList<Roles> roles = FXCollections.observableArrayList(Roles.values());
+        if (rolAdminCombo != null) {
+            rolAdminCombo.setItems(roles);
+            rolAdminCombo.getSelectionModel().selectFirst();
+        }
     }
 
     private void configurarEventos() {
@@ -205,8 +212,9 @@ public class CrudController {
     private Usuario crearUsuarioSegunTipo(String username, String password, String nombre, String email, String tipo) {
         switch (tipo) {
             case "Usuario Básico":
-                return new Usuario(username, password, nombre, email);
-                
+                Roles rolBasico = Roles.USUARIO;
+                return new Usuario(username, password, nombre, email, 0, rolBasico);
+
             case "Usuario Comunidad":
                 NivelJava nivelJava = nivelJavaCombo.getValue();
                 Integer reputacion = 0;
@@ -216,22 +224,16 @@ public class CrudController {
                     reputacion = 0;
                 }
                 return new UsuarioComunidad(username, password, nombre, email, username, nivelJava, reputacion);
-                
+
             case "Usuario Administrador":
-                Integer nivelAcceso = 1;
-                try {
-                    nivelAcceso = Integer.parseInt(nivelAccesoField.getText().trim());
-                    nivelAcceso = Math.max(1, Math.min(10, nivelAcceso));
-                } catch (NumberFormatException e) {
-                    nivelAcceso = 1;
-                }
+                Roles rol = rolAdminCombo != null ? rolAdminCombo.getValue() : Roles.ADMIN_USUARIO;
                 Boolean esSuperAdmin = esSuperAdminCheck.isSelected();
-                return new UsuarioAdministrador(username, password, nombre, email, username, nivelAcceso, esSuperAdmin);
-                
+                return new UsuarioAdministrador(username, password, nombre, email, username, rol, esSuperAdmin);
+
             case "Usuario Temporal":
                 NivelJava nivelTemp = nivelJavaCombo.getValue();
                 return new UsuarioTemp(username, nombre, nivelTemp);
-                
+
             default:
                 mostrarMensaje("Tipo de usuario no válido", "error");
                 return null;
@@ -267,7 +269,7 @@ public class CrudController {
                 tipoUsuarioCombo.setValue("Usuario Administrador");
                 if (usuarioSeleccionado instanceof UsuarioAdministrador) {
                     UsuarioAdministrador ua = (UsuarioAdministrador) usuarioSeleccionado;
-                    nivelAccesoField.setText(ua.getNivelAcceso().toString());
+                    if (rolAdminCombo != null) rolAdminCombo.setValue(ua.getRol());
                     esSuperAdminCheck.setSelected(ua.getEsSuperAdmin());
                 }
                 break;
@@ -322,7 +324,6 @@ public class CrudController {
         nuevoNombre.clear();
         nuevoEmail.clear();
         reputacionField.clear();
-        nivelAccesoField.clear();
         esSuperAdminCheck.setSelected(false);
         tipoUsuarioCombo.getSelectionModel().selectFirst();
         usuarioSeleccionado = null;
@@ -335,7 +336,7 @@ public class CrudController {
     public void regresarAlHome() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Modulo_Usuario/views/home.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 360, 720);
+            Scene scene = new Scene(fxmlLoader.load(), 360, 640);
 
             Stage stage = new Stage();
             stage.setTitle("Hello Code Software - Panel Principal");

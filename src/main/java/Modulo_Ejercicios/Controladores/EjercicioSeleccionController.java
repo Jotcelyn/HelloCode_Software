@@ -1,20 +1,19 @@
 package Modulo_Ejercicios.Controladores;
 
+import MetodosGlobales.MetodosFrecuentes;
 import Modulo_Ejercicios.DataBase.EjercicioRepository;
 import Modulo_Ejercicios.exercises.EjercicioSeleccion;
 import Modulo_Ejercicios.otrosModulos.Leccion;
-import javafx.scene.Scene;
-import javafx.stage.StageStyle;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -23,6 +22,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class EjercicioSeleccionController implements Initializable {
+
+    // Enum para tipos de respuesta
+    public enum TipoRespuesta {
+        CORRECTO, INCORRECTO, PARCIALMENTE_CORRECTO
+    }
+
+    // Variables para el sistema de vidas
+    private int vidasActuales = 20;
+    private final int VIDAS_MAXIMAS = 3;
 
     @FXML
     private ImageView imgFondo;
@@ -46,14 +54,66 @@ public class EjercicioSeleccionController implements Initializable {
     private Label lblPregunta;
 
     @FXML
-    private Label lblCantidadR;
-
-    @FXML
     private Button btnComprobar;
 
     // Contenedor dinámico para los botones de opciones
     @FXML
     private VBox opcionesContainer;
+
+    // Elementos del panel de feedback (Duolingo-style)
+    @FXML
+    private AnchorPane feedbackPanel;
+
+    // Paneles específicos para cada tipo de respuesta
+    @FXML
+    private VBox panelCorrecto;
+
+    @FXML
+    private VBox panelParcial;
+
+    @FXML
+    private VBox panelIncorrecto;
+
+    @FXML
+    private VBox panelGameOver;
+
+    // Textos para respuestas correctas
+    @FXML
+    private Text textCorrecto;
+
+    @FXML
+    private Text textCorrectoDetalle;
+
+    // Textos para respuestas parciales
+    @FXML
+    private Text textParcial;
+
+    @FXML
+    private Text textParcialDetalle;
+
+    @FXML
+    private Text textRespuestasCorrectas;
+
+    // Textos para respuestas incorrectas
+    @FXML
+    private Text textIncorrecto;
+
+    @FXML
+    private Text textIncorrectoDetalle;
+
+    @FXML
+    private Text textRespuestasCorrectasError;
+
+    // Textos para Game Over
+    @FXML
+    private Text textGameOver;
+
+    @FXML
+    private Text textGameOverDetalle;
+
+    // Botón siguiente
+    @FXML
+    private Button btnSiguiente;
 
     // Lista para almacenar los botones generados dinámicamente
     private List<Button> botonesOpciones = new ArrayList<>();
@@ -161,6 +221,9 @@ public class EjercicioSeleccionController implements Initializable {
             botonSeleccionado.getStyleClass().add("boton-seleccionado");
         }
 
+        // Mostrar u ocultar el botón comprobar según si hay selecciones
+        actualizarVisibilidadBotonComprobar();
+
         System.out.println("Opciones seleccionadas: " + opcionesSeleccionadas);
     }
 
@@ -169,16 +232,23 @@ public class EjercicioSeleccionController implements Initializable {
         return new ArrayList<>(opcionesSeleccionadas);
     }
 
-    // Método para limpiar selecciones
+    // Método para actualizar la visibilidad del botón comprobar
+    private void actualizarVisibilidadBotonComprobar() {
+        if (btnComprobar != null) {
+            btnComprobar.setVisible(!opcionesSeleccionadas.isEmpty());
+        }
+    }
+
     public void limpiarSelecciones() {
         opcionesSeleccionadas.clear();
         for (Button btn : botonesOpciones) {
             btn.getStyleClass().clear();
             btn.getStyleClass().add("boton-opcion");
         }
+        // Ocultar el botón comprobar cuando no hay selecciones
+        actualizarVisibilidadBotonComprobar();
     }
 
-    // Método para permitir solo selección única
     public void setSeleccionUnica(boolean seleccionUnica) {
         if (seleccionUnica) {
             // Modificar el comportamiento para permitir solo una selección
@@ -191,6 +261,9 @@ public class EjercicioSeleccionController implements Initializable {
                     opcionesSeleccionadas.add(btn.getText());
                     btn.getStyleClass().clear();
                     btn.getStyleClass().add("boton-seleccionado");
+                    
+                    // Actualizar visibilidad del botón comprobar
+                    actualizarVisibilidadBotonComprobar();
                 });
             }
         }
@@ -248,29 +321,31 @@ public class EjercicioSeleccionController implements Initializable {
             List<String> opciones = ejercicio.getListOpciones();
             setOpciones(opciones);
 
-            // Mostrar información sobre respuestas correctas (opcional)
-            int numRespuestasCorrectas = ejercicio.obtenerRespuestasCorrectas().size();
-            lblCantidadR.setText("Respuestas correctas: " + numRespuestasCorrectas);
-
-            // Resetear el modo a comprobar
-            modoComprobar = true;
-            btnComprobar.setText("Comprobar");
+            // Resetear estado de UI
+            btnComprobar.setVisible(false); // Ocultar inicialmente hasta que se haga una selección
+            btnComprobar.setText("COMPROBAR");
+            if (feedbackPanel != null) {
+                feedbackPanel.setVisible(false);
+            }
 
             System.out.println("Ejercicio " + (indice + 1) + " cargado. Opciones: " + opciones.size() +
-                    ", Respuestas correctas: " + numRespuestasCorrectas);
+                    ", Respuestas correctas: " + ejercicio.obtenerRespuestasCorrectas().size());
         }
     }
 
-    // Método para manejar el click del botón Comprobar/Siguiente
+    // Método para manejar el click del botón Comprobar
     @FXML
     private void handleComprobar() {
-        if (modoComprobar) {
-            // Modo comprobar: validar respuestas
-            validarRespuestas();
-        } else {
-            // Modo siguiente: avanzar al siguiente ejercicio
-            avanzarSiguienteEjercicio();
+        if (opcionesSeleccionadas.isEmpty()) {
+            // Mostrar advertencia si no hay selecciones
+            mostrarFeedback(TipoRespuesta.INCORRECTO, "Por favor, selecciona al menos una opción antes de comprobar.", null);
+            btnComprobar.setVisible(false);
+            feedbackPanel.setVisible(true);
+            return;
         }
+        
+        // Validar respuestas
+        validarRespuestas();
     }
 
     // Nuevo método para actualizar los colores de los botones después de comprobar
@@ -304,31 +379,212 @@ public class EjercicioSeleccionController implements Initializable {
             EjercicioSeleccion ejercicio = ejerciciosSeleccion.get(ejercicioActual);
             List<String> respuestasCorrectas = ejercicio.obtenerRespuestasCorrectas();
 
-            // Verificar si las opciones seleccionadas coinciden con las correctas
-            boolean esCorrecta = validarSeleccion(opcionesSeleccionadas, respuestasCorrectas);
-
-            // Guardar el resultado real
-            if (respuestasCorrectasUsuario.size() <= ejercicioActual) {
-                respuestasCorrectasUsuario.add(esCorrecta);
-            } else {
-                respuestasCorrectasUsuario.set(ejercicioActual, esCorrecta);
-            }
+            // Analizar la respuesta del usuario
+            TipoRespuesta tipoRespuesta = analizarRespuesta(opcionesSeleccionadas, respuestasCorrectas);
 
             // Actualizar colores de todos los botones según el resultado
             actualizarColoresBotones(respuestasCorrectas);
 
-            if (esCorrecta) {
-                System.out.println("¡Respuesta correcta!");
-            } else {
-                System.out.println("Respuesta incorrecta. Respuestas correctas: " + respuestasCorrectas);
+            // Manejar según el tipo de respuesta
+            switch (tipoRespuesta) {
+                case CORRECTO:
+                    respuestasCorrectasUsuario.add(true);
+                    mostrarFeedback(tipoRespuesta, "¡Excelente trabajo! Tu respuesta es completamente correcta.", null);
+                    break;
+                case PARCIALMENTE_CORRECTO:
+                    respuestasCorrectasUsuario.add(false);
+                    int correctas = contarRespuestasCorrectas(opcionesSeleccionadas, respuestasCorrectas);
+                    String respuestasCorrectasStr = String.join(", ", respuestasCorrectas);
+                    mostrarFeedback(tipoRespuesta, "Bien, pero incompleto. Tienes " + correctas + " respuesta(s) correcta(s) de " + respuestasCorrectas.size() + ".", 
+                                   respuestasCorrectasStr);
+                    reducirVida();
+                    break;
+                case INCORRECTO:
+                    respuestasCorrectasUsuario.add(false);
+                    String respuestasCorrectasError = String.join(", ", respuestasCorrectas);
+                    mostrarFeedback(tipoRespuesta, "Respuesta incorrecta. No te preocupes, inténtalo de nuevo.", 
+                                   respuestasCorrectasError);
+                    reducirVida();
+                    break;
             }
 
-            // Cambiar el botón a modo "Siguiente"
-            modoComprobar = false;
-            btnComprobar.setText("Siguiente");
+            // Ocultar el botón comprobar y mostrar el feedback
+            btnComprobar.setVisible(false);
+            feedbackPanel.setVisible(true);
 
             actualizarProgressBar();
         }
+    }
+
+    // Método para analizar el tipo de respuesta
+    private TipoRespuesta analizarRespuesta(List<String> seleccionadas, List<String> correctas) {
+        if (seleccionadas.isEmpty()) {
+            return TipoRespuesta.INCORRECTO;
+        }
+
+        int respuestasCorrectasUsuario = 0;
+        int respuestasIncorrectasUsuario = 0;
+
+        // Contar respuestas correctas e incorrectas del usuario
+        for (String seleccionada : seleccionadas) {
+            if (correctas.contains(seleccionada)) {
+                respuestasCorrectasUsuario++;
+            } else {
+                respuestasIncorrectasUsuario++;
+            }
+        }
+
+        // Determinar el tipo de respuesta
+        if (respuestasCorrectasUsuario == correctas.size() && respuestasIncorrectasUsuario == 0) {
+            return TipoRespuesta.CORRECTO;
+        } else if (respuestasCorrectasUsuario > 0 && respuestasIncorrectasUsuario == 0) {
+            return TipoRespuesta.PARCIALMENTE_CORRECTO;
+        } else {
+            return TipoRespuesta.INCORRECTO;
+        }
+    }
+
+    // Método para contar respuestas correctas del usuario
+    private int contarRespuestasCorrectas(List<String> seleccionadas, List<String> correctas) {
+        int contador = 0;
+        for (String seleccionada : seleccionadas) {
+            if (correctas.contains(seleccionada)) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    // Método para mostrar feedback estilo Duolingo
+    private void mostrarFeedback(TipoRespuesta tipo, String mensaje, String explicacion) {
+        // Ocultar todos los paneles primero
+        ocultarTodosPanelesFeedback();
+        
+        // Mostrar el panel correspondiente según el tipo de respuesta
+        switch (tipo) {
+            case CORRECTO:
+                mostrarPanelCorrecto(mensaje, explicacion);
+                break;
+            case INCORRECTO:
+                if (vidasActuales <= 0) {
+                    mostrarPanelGameOver();
+                } else {
+                    mostrarPanelIncorrecto(mensaje, explicacion);
+                }
+                break;
+            case PARCIALMENTE_CORRECTO:
+                mostrarPanelParcial(mensaje, explicacion);
+                break;
+        }
+        
+        // Configurar y mostrar el botón siguiente
+        configurarBotonSiguiente();
+        
+        // Mostrar el panel de feedback
+        feedbackPanel.setVisible(true);
+    }
+
+    // Método para ocultar todos los paneles de feedback
+    private void ocultarTodosPanelesFeedback() {
+        if (panelCorrecto != null) panelCorrecto.setVisible(false);
+        if (panelParcial != null) panelParcial.setVisible(false);
+        if (panelIncorrecto != null) panelIncorrecto.setVisible(false);
+        if (panelGameOver != null) panelGameOver.setVisible(false);
+    }
+
+    // Método para mostrar panel correcto
+    private void mostrarPanelCorrecto(String mensaje, String explicacion) {
+        if (panelCorrecto != null) {
+            panelCorrecto.setVisible(true);
+            if (textCorrecto != null) {
+                textCorrecto.setText("¡Perfecto!");
+            }
+            if (textCorrectoDetalle != null) {
+                textCorrectoDetalle.setText(mensaje != null ? mensaje : "¡Has respondido todas las opciones correctamente!");
+            }
+        }
+    }
+
+    // Método para mostrar panel parcial
+    private void mostrarPanelParcial(String mensaje, String respuestasCorrectas) {
+        if (panelParcial != null) {
+            panelParcial.setVisible(true);
+            if (textParcial != null) {
+                textParcial.setText("¡Casi!");
+            }
+            if (textParcialDetalle != null) {
+                textParcialDetalle.setText(mensaje != null ? mensaje : "Respuesta incompleta. Te faltan algunas opciones correctas.");
+            }
+            if (textRespuestasCorrectas != null && respuestasCorrectas != null) {
+                textRespuestasCorrectas.setText("Respuestas correctas: " + respuestasCorrectas);
+            }
+        }
+    }
+
+    // Método para mostrar panel incorrecto
+    private void mostrarPanelIncorrecto(String mensaje, String respuestasCorrectas) {
+        if (panelIncorrecto != null) {
+            panelIncorrecto.setVisible(true);
+            if (textIncorrecto != null) {
+                textIncorrecto.setText("¡Inténtalo de nuevo!");
+            }
+            if (textIncorrectoDetalle != null) {
+                textIncorrectoDetalle.setText(mensaje != null ? mensaje : "Respuesta incorrecta. Revisa las opciones.");
+            }
+            if (textRespuestasCorrectasError != null && respuestasCorrectas != null) {
+                textRespuestasCorrectasError.setText("Las respuestas correctas son: " + respuestasCorrectas);
+            }
+        }
+    }
+
+    // Método para mostrar panel Game Over
+    private void mostrarPanelGameOver() {
+        if (panelGameOver != null) {
+            panelGameOver.setVisible(true);
+            if (textGameOver != null) {
+                textGameOver.setText("¡Se agotaron las vidas!");
+            }
+            if (textGameOverDetalle != null) {
+                textGameOverDetalle.setText("No te preocupes, puedes intentarlo nuevamente.");
+            }
+        }
+    }
+
+    // Método para configurar el botón siguiente
+    private void configurarBotonSiguiente() {
+        if (btnSiguiente != null) {
+            btnSiguiente.setDisable(false);
+            btnSiguiente.setOpacity(1.0);
+            
+            if (vidasActuales <= 0) {
+                btnSiguiente.setText("REINICIAR");
+            } else {
+                btnSiguiente.setText("SIGUIENTE");
+            }
+        }
+    }
+
+    // Método para reducir vidas
+    private void reducirVida() {
+        vidasActuales--;
+        actualizarVidasUI();
+        
+        if (vidasActuales <= 0) {
+            manejarGameOver();
+        }
+    }
+
+    // Método para actualizar la UI de las vidas
+    private void actualizarVidasUI() {
+        if (txtLiveCount != null) {
+            txtLiveCount.setText(String.valueOf(vidasActuales));
+        }
+    }
+
+    // Método para manejar Game Over
+    private void manejarGameOver() {
+        // El manejo de Game Over ahora se hace en mostrarFeedback
+        // Este método se puede usar para lógica adicional si es necesario
     }
 
     // Método para validar si las respuestas seleccionadas son correctas
@@ -374,7 +630,7 @@ public class EjercicioSeleccionController implements Initializable {
             controller.configurarResultados(xp, aciertos, total);
             javafx.stage.Stage stage = new javafx.stage.Stage();
             stage.setTitle("Lección Completada");
-            stage.setScene(new javafx.scene.Scene(root));
+            stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.show();
             // Cerrar la ventana actual
@@ -404,8 +660,64 @@ public class EjercicioSeleccionController implements Initializable {
         // Inicializar la lección al cargar el controller
         inicializarLeccion();
 
+        // Inicializar el sistema de vidas
+        actualizarVidasUI();
+
+        // Configurar el panel de feedback inicialmente oculto
+        if (feedbackPanel != null) {
+            feedbackPanel.setVisible(false);
+        }
 
         // Configurar el evento del botón comprobar
         btnComprobar.setOnAction(event -> handleComprobar());
+
+        // Configurar el evento del botón siguiente
+        if (btnSiguiente != null) {
+            btnSiguiente.setOnAction(event -> handleContinuar());
+        }
+    }
+
+    // Método para manejar el botón continuar
+    @FXML
+    private void handleContinuar() {
+        if (vidasActuales <= 0) {
+            // Mostrar alerta de Game Over y regresar a la pantalla de ruta
+            MetodosFrecuentes.mostrarAlerta("Game Over", "Se han agotado las vidas. Regresando a la pantalla de ruta.");
+            // Aquí se podría agregar lógica para cerrar la ventana actual o navegar a la ruta
+            // No reiniciamos el juego, simplemente mostramos la alerta
+        } else {
+            // Continuar al siguiente ejercicio
+            feedbackPanel.setVisible(false);
+            btnComprobar.setVisible(false); // Ocultar hasta que se haga una nueva selección
+            avanzarSiguienteEjercicio();
+        }
+    }
+
+    // Método para reiniciar el juego
+    private void reiniciarJuego() {
+        vidasActuales = VIDAS_MAXIMAS;
+        ejercicioActual = 0;
+        respuestasCorrectasUsuario.clear();
+        actualizarVidasUI();
+        
+        // Ocultar feedback y mostrar comprobar
+        feedbackPanel.setVisible(false);
+        btnComprobar.setVisible(true);
+        if (btnSiguiente != null) {
+            btnSiguiente.setText("SIGUIENTE");
+            btnSiguiente.setDisable(true);
+            btnSiguiente.setOpacity(0.0);
+        }
+        
+        // Resetear modo comprobar
+        btnComprobar.setText("COMPROBAR");
+        
+        // Cargar el primer ejercicio
+        if (totalEjercicios > 0) {
+            cargarEjercicio(0);
+        }
+        
+        // Resetear progress bar
+        progressBar.setProgress(0.0);
     }
 }

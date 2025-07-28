@@ -27,7 +27,7 @@ public class GestorEjerciciosEntry {
     /**
      * Crea una nueva lección normal
      */
-    public static Leccion crearLeccionNormal(String nombre, List<?> ejercicios, Modulo_Ejercicios.exercises.NivelDificultad intermedio, LenguajeProgramacion java) {
+    public static Leccion crearLeccionNormal(String nombre, List<?> ejercicios) {
         return gestor.crearLeccion(nombre, ejercicios, TipoLeccion.NORMAL, 15, 5);
     }
     

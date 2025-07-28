@@ -59,7 +59,7 @@ public class SplashController {
                 try {
                     // Cargar la pantalla de login
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Modulo_Usuario/views/login.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 360, 720);
+                    Scene scene = new Scene(fxmlLoader.load(), 360, 640);
                     
                     Stage stage = new Stage();
                     stage.setTitle("Login - Sistema de Gestión");

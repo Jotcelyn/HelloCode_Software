@@ -1,5 +1,2 @@
 0e4c0e45-a347-4433-bed2-f0b5e71a69dc|java|qwrer
-0bc2de2d-0a0d-4207-a254-8cf0af6623ff|Python |Aprendiendo
-0bc2de2d-0a0d-4207-a254-8cf0af6623ff|Python |Aprendiendo
-2e83ae42-3ea7-4b33-b323-4ea2ce05b436|JAVA|aprendiendo
-2e83ae42-3ea7-4b33-b323-4ea2ce05b436|JAVA|aprendiendo
+56085086-8285-4659-b519-c69dd5feefc6|python|

@@ -69,6 +69,7 @@ public class UsuarioComunidad extends Usuario {
         this.amigos = amigos;
     }
 
+
     // Métodos para gestionar amigos
     public void agregarAmigo(UsuarioTemp amigo) {
         if (amigo != null && !amigos.contains(amigo)) {
