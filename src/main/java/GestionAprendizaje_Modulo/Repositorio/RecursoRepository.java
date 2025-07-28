@@ -1,5 +1,5 @@
 package GestionAprendizaje_Modulo.Repositorio;
 
-public class RutaRepository {
+public class RecursoRepository {
     
 }
