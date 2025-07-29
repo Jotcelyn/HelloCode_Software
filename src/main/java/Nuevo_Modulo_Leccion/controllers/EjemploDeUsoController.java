@@ -1,6 +1,5 @@
 package Nuevo_Modulo_Leccion.controllers;
 
-import MetodosGlobales.MetodosFrecuentes;
 import Nuevo_Modulo_Leccion.logic.Leccion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

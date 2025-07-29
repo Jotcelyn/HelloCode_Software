@@ -33,6 +33,7 @@ public class DashboardEstudianteController {
             AnchorPane listaNodosPane = loader.load();
             rootPane.getChildren().setAll(listaNodosPane);
         } catch (Exception e) {
+            System.err.println("Error al cargar la vista Ruta.fxml: " + e.getMessage());
             e.printStackTrace();
         }
     }

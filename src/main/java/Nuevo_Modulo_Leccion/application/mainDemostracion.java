@@ -1,11 +1,11 @@
 package Nuevo_Modulo_Leccion.application;
 
-import Nuevo_Modulo_Leccion.controllers.LeccionUIController;
-import Nuevo_Modulo_Leccion.logic.Leccion;
-import Nuevo_Modulo_Leccion.dataBase.LeccionRepository;
-import javafx.stage.Stage;
-
 import java.util.List;
+
+import Nuevo_Modulo_Leccion.controllers.LeccionUIController;
+import Nuevo_Modulo_Leccion.dataBase.LeccionRepository;
+import Nuevo_Modulo_Leccion.logic.Leccion;
+import javafx.stage.Stage;
 
 public class mainDemostracion {
     public static void main(String[] args) {
