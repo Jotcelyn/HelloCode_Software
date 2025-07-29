@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionAprendizaje_Modulo.Controladores.DashboardEstudianteController" spacing="10" alignment="CENTER">
+    <Label text="Encuesta Inicial" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <Label text="Selecciona el lenguaje que deseas aprender:" />
+    <ComboBox fx:id="lenguajeComboBox" />
+    <Label text="Selecciona tu nivel de conocimiento:" />
+    <ComboBox fx:id="nivelComboBox" />
+    <Button fx:id="continuarButton" text="Continuar" onAction="#manejarContinuar" />
+    <Label fx:id="mensajeLabel" textFill="red" />
+</VBox>

@@ -1,8 +1,3 @@
-¡Muy buena pregunta!
-La idea es que tu módulo no duplique la lógica ni los datos de ejercicios, sino que aproveche lo que ya existe en Modulo_Ejercicios.
-Por eso, la mayoría de las clases modelo y repositorio en tu módulo serán adaptadores, clasificadores o agrupadores que trabajan sobre los datos ya existentes.
-
-Aquí te explico para qué sirve cada clase propuesta y qué lógica tendría en este nuevo enfoque:
 
 📁 Modelo
 1. Curso.java
@@ -76,4 +71,3 @@ Modelo: Solo almacena datos y relaciones.
 Repositorio: Gestiona listas en memoria (no lee archivos de ejercicios).
 Fábrica: Clasifica y agrupa ejercicios en lecciones y rutas.
 Controlador: Orquesta la lógica y responde a la vista.
-¿Quieres que empecemos con el código de la LeccionFactory para que veas cómo se agrupan los ejercicios automáticamente? ¿O prefieres que te ayude a definir el modelo de Leccion y Ruta primero?
