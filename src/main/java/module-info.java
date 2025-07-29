@@ -29,10 +29,8 @@ module Modulo_Ejercicio {
 
     // Exportaciones
     exports GestionAprendizaje_Modulo.Aplicacion;
-    exports GestionAprendizaje_Modulo.Ruta;
     exports GestionAprendizaje_Modulo.Modelo;
-    exports GestionAprendizaje_Modulo.Repositorio;
-    exports GestionAprendizaje_Modulo.Gestor;
+    exports GestionAprendizaje_Modulo.Controladores;
 
     exports Comunidad_Modulo.App;
     exports Comunidad_Modulo.integracion;
