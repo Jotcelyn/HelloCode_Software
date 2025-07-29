@@ -1,5 +1,7 @@
 package GestionAprendizaje_Modulo.Logica;
 
+import GestionAprendizaje_Modulo.Logica.NodoRuta;
+
 import java.util.ArrayList;
 import java.util.List;
 
