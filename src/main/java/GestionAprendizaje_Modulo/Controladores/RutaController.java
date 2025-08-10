@@ -506,13 +506,16 @@ public class    RutaController {
         contenidoVBox.getChildren().clear();
         contenidoVBox.setSpacing(20);
         if (rutaActual == null) return;
+        // Leer el nivel seleccionado del Diagnóstico
+        String nivel = DiagnosticoController.nivelSeleccionado;
+
 
         // Determinar el nivel desbloqueado actual
-        nivelDesbloqueado = calcularNivelDesbloqueado();
+   nivelDesbloqueado = calcularNivelDesbloqueado();
 
         int maxTemas = 1;
         if (nivelDesbloqueado == 2) maxTemas = 2;
-        else if (nivelDesbloqueado == 3) maxTemas = Integer.MAX_VALUE;
+      else if (nivelDesbloqueado == 3) maxTemas = Integer.MAX_VALUE;
 
         Map<TemaLeccion, List<NodoRuta>> nodosPorTema = rutaActual.getNodos().stream()
                 .filter(nodo -> nodo.getLeccion() != null && !nodo.getLeccion().getListEjercicios().isEmpty())
@@ -633,6 +636,9 @@ public class    RutaController {
         }
         return nivel;
     }
+
+
+
 
     // Verifica si todos los nodos de los temas [start, end) están completos
     private boolean estanTodosCompletos(Map<TemaLeccion, List<NodoRuta>> nodosPorTema, int start, int end) {

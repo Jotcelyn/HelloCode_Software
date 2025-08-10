@@ -1,2 +1,1 @@
-usuario1;ruta-c-nodo-1
-prueba;ruta-c-nodo-1,ruta-java-nodo-2,ruta-java-nodo-1,ruta-c-nodo-2,ruta-c-nodo-3,ruta-c-nodo-6,ruta-java-nodo-9,ruta-java-nodo-4,ruta-java-nodo-3,ruta-java-nodo-10,ruta-python-nodo-1,ruta-php-nodo-1,ruta-java-nodo-13,ruta-java-nodo-12
+prueba;ruta-java-nodo-3,ruta-java-nodo-2,ruta-java-nodo-1,ruta-java-nodo-12

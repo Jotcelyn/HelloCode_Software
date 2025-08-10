@@ -7,6 +7,9 @@
     <list default="true" id="d7cc1e6b-4518-4661-b5b8-134b2b5b445a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GestionAprendizaje_Modulo/Controladores/RutaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GestionAprendizaje_Modulo/Controladores/RutaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GestionAprendizaje_Modulo/data/progreso_usuarios.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GestionAprendizaje_Modulo/data/progreso_usuarios.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/RutaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/Controladores/RutaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/data/progreso_usuarios.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GestionAprendizaje_Modulo/data/progreso_usuarios.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
