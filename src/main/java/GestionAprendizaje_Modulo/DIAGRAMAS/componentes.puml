@@ -1,0 +1,102 @@
+@startuml
+title Componentes GestionAprendizaje_Modulo (incluye TXT y comunicación con otros módulos)
+
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+
+package "GestionAprendizaje_Modulo" {
+
+  [Controladores] <<component>>
+  [Logica] <<component>>
+  [Modelo] <<component>>
+  [Repositorio] <<component>>
+  [Aplicacion] <<component>>
+
+  [ConfiguracionUsuarioService] <<component>>
+  [AprendizajeManager] <<component>>
+  [Ruta] <<component>>
+  [NodoRuta] <<component>>
+  [RecursoRepository] <<component>>
+
+  interface IConfiguracionUsuarioService
+  interface IRecursoRepository
+
+  [ConfiguracionUsuarioService] ..|> IConfiguracionUsuarioService
+  [RecursoRepository] ..|> IRecursoRepository
+
+  [Controladores] ..> IConfiguracionUsuarioService : usa
+  [Logica] ..> IRecursoRepository : usa
+
+  [Controladores] --> [ConfiguracionUsuarioService] : usa
+  [Controladores] --> [AprendizajeManager] : usa
+  [Controladores] --> [Ruta] : usa
+  [Controladores] --> [NodoRuta] : usa
+
+  [Logica] --> [ConfiguracionUsuarioService]
+  [Logica] --> [AprendizajeManager]
+  [Logica] --> [Ruta]
+  [Logica] --> [NodoRuta]
+  [Logica] --> [RecursoRepository]
+
+  [ConfiguracionUsuarioService] ..> [Modelo] : maneja datos de usuario
+  [AprendizajeManager] ..> [Modelo] : maneja rutas y progreso
+  [RecursoRepository] ..> [Modelo] : maneja recursos
+
+  [Repositorio] ..> [RecursoRepository]
+  [Aplicacion] ..> [Controladores]
+
+  folder "resources/GestionAprendizaje_Modulo/data" as DATA {
+    [configuracion_usuarios.txt] <<file>>
+    [progreso_rutas.txt] <<file>> #DDDDDD
+    [rutas_definidas.txt] <<file>> #DDDDDD
+    [recursos.json] <<file>> #EEEEEE
+  }
+
+  ConfiguracionUsuarioService --> [configuracion_usuarios.txt] : R/W
+  AprendizajeManager --> [progreso_rutas.txt] : (si aplica)
+  AprendizajeManager --> [rutas_definidas.txt] : (si aplica)
+  RecursoRepository ..> [recursos.json] : lee
+}
+
+' ==== Módulos Externos Detectados ====
+package "Otros Módulos" {
+  [Modulo_Usuario] <<external>>
+  [Conexion] <<external>>
+  [Nuevo_Modulo_Leccion] <<external>>
+  [Modulo_Ejercicios] <<external>>
+  [Gamificacion_Modulo] <<external>>
+}
+
+' Dependencias desde Controladores y Lógica hacia módulos externos
+[Controladores] ..> [Modulo_Usuario] : usa Usuario / vistas
+[Controladores] ..> [Conexion] : SesionManager / MetodosFrecuentes
+[Controladores] ..> [Gamificacion_Modulo] : navegación FXML
+[RutaController] ..> [Nuevo_Modulo_Leccion] : abre lecciones
+[AprendizajeManager] ..> [Nuevo_Modulo_Leccion] : usa Leccion/TemaLeccion
+[AprendizajeManager] ..> [Modulo_Ejercicios] : Lenguaje / NivelDificultad
+
+note right of [Modulo_Usuario]
+Autenticación, datos de usuario
+end note
+
+note right of [Conexion]
+Gestión de sesión y utilidades comunes
+end note
+
+note bottom of [Nuevo_Modulo_Leccion]
+Contenido de lecciones
+end note
+
+note bottom of [Modulo_Ejercicios]
+Definiciones de ejercicios y niveles
+end note
+
+note bottom of [Gamificacion_Modulo]
+Ranking, perfil gamificado
+end note
+
+note right of [configuracion_usuarios.txt]
+Persistencia configuraciones
+end note
+
+@enduml
