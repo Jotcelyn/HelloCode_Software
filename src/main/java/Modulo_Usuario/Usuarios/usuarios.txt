@@ -12,6 +12,7 @@ Jose;1234567;Jose;joserocapod0842@gmail.com;3;3;USUARIO
 esteban;esteban;esteban;esteban@god.ec;1000;3;USUARIO
 tarek;tarek;tarek;tarek@god.com;0;0;USUARIO
 pruebita;prueba;prueba;prueba@gmail.com;100;0;USUARIO
-Fernando Huilca;fer123;Fernando Huilca;fer@gmail.com;2323;0;USUARIO
+Fernando Huilca;fer123;Fernando Huilca;fer@gmail.com;2531;0;USUARIO
 juan1;juan123;juan;juan@gmail.com;2640;5;USUARIO
 juan2;juan123;juan2;juan1@gmail.com;0;3;ADMINISTRADOR
+Jordy ENP;123456;Jordy ENP;jordy@gmail.com;479;1;USUARIO

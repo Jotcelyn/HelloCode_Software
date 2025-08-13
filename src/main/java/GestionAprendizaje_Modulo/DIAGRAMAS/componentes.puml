@@ -49,19 +49,18 @@ package "GestionAprendizaje_Modulo" {
     [configuracion_usuarios.txt] <<file>>
     [progreso_rutas.txt] <<file>> #DDDDDD
     [rutas_definidas.txt] <<file>> #DDDDDD
-    [recursos.json] <<file>> #EEEEEE
+    [recursos.txt] <<file>> #EEEEEE
   }
 
   ConfiguracionUsuarioService --> [configuracion_usuarios.txt] : R/W
   AprendizajeManager --> [progreso_rutas.txt] : (si aplica)
   AprendizajeManager --> [rutas_definidas.txt] : (si aplica)
-  RecursoRepository ..> [recursos.json] : lee
+  RecursoRepository ..> [recursos.txt] : lee
 }
 
 ' ==== Módulos Externos Detectados ====
 package "Otros Módulos" {
   [Modulo_Usuario] <<external>>
-  [Conexion] <<external>>
   [Nuevo_Modulo_Leccion] <<external>>
   [Modulo_Ejercicios] <<external>>
   [Gamificacion_Modulo] <<external>>
@@ -69,7 +68,6 @@ package "Otros Módulos" {
 
 ' Dependencias desde Controladores y Lógica hacia módulos externos
 [Controladores] ..> [Modulo_Usuario] : usa Usuario / vistas
-[Controladores] ..> [Conexion] : SesionManager / MetodosFrecuentes
 [Controladores] ..> [Gamificacion_Modulo] : navegación FXML
 [RutaController] ..> [Nuevo_Modulo_Leccion] : abre lecciones
 [AprendizajeManager] ..> [Nuevo_Modulo_Leccion] : usa Leccion/TemaLeccion
@@ -77,10 +75,6 @@ package "Otros Módulos" {
 
 note right of [Modulo_Usuario]
 Autenticación, datos de usuario
-end note
-
-note right of [Conexion]
-Gestión de sesión y utilidades comunes
 end note
 
 note bottom of [Nuevo_Modulo_Leccion]

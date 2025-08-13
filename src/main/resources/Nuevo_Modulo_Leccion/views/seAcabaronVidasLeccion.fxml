@@ -75,5 +75,10 @@
          </font>
       </Text>
       <Label layoutX="61.0" layoutY="332.0" style="-fx-text-fill: #424874; -fx-font-size: 16px; -fx-font-weight: bold;" text="XP" />
+      <Text layoutX="29.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="En 2 minutos se regeneran tus vidas">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

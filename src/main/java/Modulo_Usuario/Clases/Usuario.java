@@ -1,5 +1,7 @@
 package Modulo_Usuario.Clases;
 
+import Conexion.LeccionesCompletadas;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -172,6 +174,8 @@ public class Usuario extends UsuarioBase {
             setXp(this.xp + puntos);
             System.out.println("✅ +" + puntos + " XP | Total: " + this.xp);
             guardarCambiosEnArchivo(); // Guardar cambios en archivo
+            //Agregar en los puntos también para que no se desigualen ninguno :
+            //LeccionesCompletadas.aumentarXP(puntos);
         }
     }
 
